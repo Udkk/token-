@@ -1,0 +1,26 @@
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.26;
+
+
+contract MyToken {
+
+    string public tokenname = "ester";
+    string public tokenabbrv = "est";
+    uint public totalsupply = 0;
+
+    mapping(address => uint) public balances;
+
+    function mint(address _address , uint _val) public{
+        totalsupply +=_val;
+        balances[_address] += _val;
+
+    }
+    function burn(address _address , uint _val) public{
+        totalsupply -=_val;
+        balances[_address] -= _val;
+
+    }
+
+    
+     
+}
